@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript">
+      window.onload = function(){
+        let osvg = document.createElementNS('http://www.w3.org/2000/svg','svg');
+        let ol = document.createElementNS('http://www.w3.org/2000/svg','line');
+        osvg.setAttribute('width','800');
+        osvg.setAttribute('height','600');
+
+        ol.setAttribute('x1','100');
+        ol.setAttribute('y1','100');
+        ol.setAttribute('x2','400');
+        ol.setAttribute('y2','300');
+        ol.style.stroke = 'green';
+        osvg.appendChild(ol);
+
+        document.body.appendChild(osvg);
+      }
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

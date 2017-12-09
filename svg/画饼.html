@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript">
+
+      function d2a(n){
+        return n*Math.PI/180
+      }
+      function a2d(n){
+        return n*180/Math.PI;
+      }
+      window.onload =function(){
+       let osvg = document.getElementById('svg1');
+
+       function pie(start,end,color='black'){
+         let cx=400;cy=300,r=200;
+         let x1=cx+r*Math.sin(d2a(start));
+         let y1=cy-r*Math.cos(d2a(start));
+         let x2=cx+r*Math.sin(d2a(end));
+         let y2=cy-r*Math.cos(d2a(end));
+         let opath = document.createElementNS('http://www.w3.org/2000/svg','path');
+         opath.setAttribute('d',`
+          M ${cx} ${cy}
+          L ${x1} ${y1}
+          A ${r} ${r} ${d2a(end-start)} 0 1 ${x2} ${y2}
+          Z
+         `);
+         opath.style.stroke="none";
+         opath.style.fill=color;
+         osvg.appendChild(opath);
+       }
+       pie(30,60,'red');
+    }
+    </script>
+  </head>
+  <body>
+    <svg width="800" height="600" id="svg1">
+
+    </svg>
+  </body>
+</html>

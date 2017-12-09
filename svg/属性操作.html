@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript">
+      window.onload = function(){
+      let btn = document.getElementById('btn');
+      let osvg = document.getElementById('svg1');
+      btn.onclick = function(){
+        let ol = document.createElementNS('http://www.w3.org/2000/svg','line');
+        ol.setAttribute('x1','100');
+        ol.setAttribute('y1','100');
+        ol.setAttribute('x2','400');
+        ol.setAttribute('y2','300');
+        ol.style.stroke = 'yellow';
+        osvg.appendChild(ol);
+      }
+
+      }
+    </script>
+  </head>
+  <body>
+    <input type="button" name="" value="按钮" id="btn">
+    <svg width="800" height='600' id='svg1'>
+
+    </svg>
+  </body>
+</html>
